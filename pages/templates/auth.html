@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        {% autoescape None %}
+        {{ jump }}
+        <title>Player Signup - Chinese Chess Online</title>
+        <link href="{{ static_url("css/common.css") }}" rel="stylesheet" type="text/css" />
+        <link href="{{ static_url("css/reg.css") }}" rel="stylesheet" type="text/css" />
+    </head>
+
+
+    <body>
+
+    <div class="index_all">
+        <div class="reg_all">
+            <div class="part_reg">
+                <div class="reg_header" style="text-align: center">
+                    Information
+                </div>
+                <div class="reg_content" style="padding:20px;background-color: {{ color }}">
+                    {{ msg }}
+                </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height:3986px;"></div>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Player Login - Chinese Chess Online</title>
+        <link href="{{ static_url("css/common.css") }}" rel="stylesheet" type="text/css" />
+        <link href="{{ static_url("css/reg.css") }}" rel="stylesheet" type="text/css" />
+        {% autoescape None %}
+        {{ header_script }}
+    </head>
+
+
+    <body>
+    <div class="index_all">
+        <div class="reg_all">
+            <div class="part_reg">
+                <div class="reg_header">
+                    LOG IN
+                </div>
+                <div class="reg_content">
+                    <form action="/auth" onsubmit="return check_reCaptcha()" method="post">
+                        <table>
+                            <tr>
+                                <td width="80">Username：</td>
+                                <td width="130">
+                                    <input name="un" type="text" class="reg_text" placeholder="Type your username." />
+                                </td>
+                            </tr><tr>
+                                <td>Password：</td>
+                                <td>
+                                    <input type="password" name="pw" class="reg_text" placeholder="Type your password." />
+                                </td>
+                            </tr>
+                            <tr><td>CAPTCHA：</td>
+                                <td style="vertical-align:middle">
+                                    {{ inline_script }}
+                                </td>
+                            </tr>
+
+                            <tr><td></td>
+                                <td colspan="2"><input type="submit" value="LOG IN" class="regbtn" /><br />
+                                    <div style="margin-top:5px;">
+                                        <a href="/reg" class="linksp">SIGN UP</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr><td></td><td></td><td></td></tr>
+                        </table>
+                        <input type="hidden" name="a" value="21">
+                        {% module xsrf_form_html() %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height:3986px;"></div>
+
+    {{ precheck_script }}
+    {{ bottom_script }}
+    </body>
+</html>

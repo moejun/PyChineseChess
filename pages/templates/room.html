@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Game room - Chinese Chess Online</title>
+    <link href="{{ static_url("css/common.css") }}" rel="stylesheet" type="text/css" />
+    <link href="{{ static_url("css/reg.css") }}" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body>
+
+<div class="index_all">
+    <div class="reg_all">
+        <div class="part_reg">
+            <div class="reg_header" style="text-align: center">
+                {{ room_text }} (<a href="/game" style="font-size: 15px; color: #0066FF; text-decoration: underline;">Retern to lobby</a>)
+            </div>
+            <div class="reg_content" style="padding:20px;background-color: white">
+                <div style="width: 650px; float: left;">
+                    <canvas id="canvas" width="630" height="700" class="canvas" style="margin-top:20px;">Your browser is too old. Try modern brower please.</canvas>
+                </div>
+                <div>
+                    <ul class="minfo">
+                        <li><b>Black faction: </b><span id="p2">{{ p2 }}</span></li>
+                        <li><b>Red faction: </b><span id="p1">{{ p1 }}</span></li>
+                        <li><b>Status: </b><span id="s">{{ status }}</span></li>
+                        <li><b>Winner: </b><span id="w">{{ winner }}</span></li>
+                        <li><b>Turn:</b><span id="t" style="color:{{ turn }}">{{ turn }}</span></li>
+                        <li><b>Timeout:</b><span id="timer">{{ timer }}</span></li>
+
+                    </ul>
+                    Your decision:<br>
+                    <input id="ibox" type="text" class="reg_text" placeholder="Press ENTER to send." {{ iput }}/>
+
+                </div>
+                <div style="margin-top: 20px;">
+                    <b>History of Decisions:</b>
+                    <ul id="recs" class="recordlist">
+                    </ul>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div style="height:3986px;"></div>
+<script type="application/javascript">
+    var rid = {{ room_id }};
+</script>
+<script src="{{ static_url("js/jq3.4.0.min.js") }}"></script>
+<script src="{{ static_url("js/send.js") }}"></script>
+<script type="application/javascript">
+    var w = wss('{{ wsip }}', '{{ wspt }}', '{{ wspg }}', '{{ wspara }}');
+    var inputtxt = document.getElementById('ibox');
+    inputtxt.onkeydown = function(e) {
+        if(e.keyCode === 13) {
+            w.send(inputtxt.value);
+            inputtxt.value = ''
+            //console.log('keydown enter send value', text.value);
+        }
+
+    };
+
+</script>
+<script src="{{ static_url("js/room.js") }}"></script>
+
+</body>
+</html>

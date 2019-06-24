@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0; padding:0;}
+
+
+body{
+	background:#FFF;
+	color:#333;
+}
+a{
+	text-decoration:none;
+	color:#333;
+}
+img{
+	border:0px;
+}
+.hidden{
+	display:none;
+} 
+p{
+	text-indent:30px;
+	font-size:14px;
+	text-align:left;
+	margin-top:10px;
+}
+ul{
+	list-style-type:none;
+}
+
+div.index_all{
+	margin:auto;
+	width:1024px;
+}
+
+

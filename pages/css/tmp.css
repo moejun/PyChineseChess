@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.room{
+    position: relative;
+    margin: 5px 10px;
+}
+a{
+    text-decoration: none;
+    color: rgb(233, 221, 182);
+}
+.box{
+    display: block;
+    margin: 0 auto;
+}
+.new{
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: rgb(221, 200, 113);
+    cursor: pointer;
+}
